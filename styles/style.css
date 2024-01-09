@@ -1,0 +1,26 @@
+#container {
+    display: flex;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+#nav-pane {
+    display: flex;
+    height: 600px;
+    width: 400px;
+}
+#screen {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    margin-right: 400px;
+    border-style: solid;
+}
+.cell:hover {
+    background: gray;
+}
+
+.cell:click {
+    background: black;
+}
