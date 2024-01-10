@@ -35,7 +35,7 @@ title.setAttribute('id', 'title');
 title.textContent = "Etch-a-Sketch";
 titleContainer.appendChild(title);
 
-generateGrids(16);
+generateGrids(32);
 
 const cells = document.querySelectorAll('.cell');
 
@@ -43,10 +43,19 @@ screen.addEventListener('mousedown', () => {
     cells.forEach((cell) => {
         cell.onmouseover = () => cell.style.background = 'black';
     });
-})
+});
 
 screen.addEventListener('mouseup', () => {
     cells.forEach((cell) => {
         cell.onmouseover = () => null;
     });
-})
+});
+
+const resetButton = document.createElement('button');
+resetButton.addEventListener('click', () => {
+    cells.forEach((cell) => {
+        cell.style.background = 'white';
+    });
+});
+resetButton.textContent = 'reset';
+titleContainer.appendChild(resetButton);

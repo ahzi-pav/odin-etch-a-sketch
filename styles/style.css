@@ -21,6 +21,7 @@
 }
 #title-container {
     display: flex;
+    flex-direction: column;
     height: 600px;
     width: 600px;
     justify-content: center;
