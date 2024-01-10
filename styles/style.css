@@ -1,30 +1,25 @@
 #container {
     display: flex;
-    height: 600px;
+    height: 580px;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-}
-#nav-pane {
-    display: flex;
-    height: 600px;
-    width: 400px;
+    gap: 10px;
 }
 #screen {
     display: flex;
     width: 500px;
     height: 500px;
     border-style: solid;
+    margin-right: 100px;
 }
 .cell:hover {
     background: gray;
 }
-#title-container {
+#nav-pane {
     display: flex;
     flex-direction: column;
     height: 600px;
     width: 600px;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
 }

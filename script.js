@@ -1,10 +1,4 @@
-const container = document.createElement('div');
-container.setAttribute('id', 'container');
-document.body.appendChild(container);
-
-const navPane = document.createElement('div');
-navPane.setAttribute('id', 'nav-pane');
-container.appendChild(navPane);
+const container = document.querySelector('#container');
 
 const screen = document.createElement('div');
 screen.setAttribute('id', 'screen');
@@ -26,15 +20,6 @@ function generateGrids(size) {
     };
 };
 
-const titleContainer = document.createElement('div');
-titleContainer.setAttribute('id', 'title-container');
-container.appendChild(titleContainer);
-
-const title = document.createElement('h1');
-title.setAttribute('id', 'title');
-title.textContent = "Etch-a-Sketch";
-titleContainer.appendChild(title);
-
 generateGrids(32);
 
 const cells = document.querySelectorAll('.cell');
@@ -51,6 +36,8 @@ screen.addEventListener('mouseup', () => {
     });
 });
 
+const navPane = container.querySelector('#nav-pane');
+
 const resetButton = document.createElement('button');
 resetButton.addEventListener('click', () => {
     cells.forEach((cell) => {
@@ -58,4 +45,4 @@ resetButton.addEventListener('click', () => {
     });
 });
 resetButton.textContent = 'reset';
-titleContainer.appendChild(resetButton);
+navPane.appendChild(resetButton);
