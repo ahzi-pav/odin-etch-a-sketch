@@ -3,7 +3,7 @@
     height: 600px;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
 }
 #nav-pane {
     display: flex;
@@ -14,13 +14,16 @@
     display: flex;
     width: 500px;
     height: 500px;
-    margin-right: 400px;
     border-style: solid;
 }
 .cell:hover {
     background: gray;
 }
-
-.cell:click {
-    background: black;
+#title-container {
+    display: flex;
+    height: 600px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
 }
