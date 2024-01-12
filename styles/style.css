@@ -1,14 +1,20 @@
+body {
+    background: black;
+    padding: 20px;
+}
+
 #container {
     display: flex;
-    height: 580px;
+    height: 90vh;
     align-items: center;
     justify-content: center;
+    background: white;
     gap: 10px;
 }
 #screen {
     display: flex;
-    width: 500px;
-    height: 500px;
+    width: 420px;
+    height: 420px;
     border-style: solid;
     margin-right: 100px;
 }
@@ -23,3 +29,7 @@
     justify-content: center;
     align-items: center;
 }
+#gridRange {
+    accent-color: black;
+}
+

@@ -20,9 +20,27 @@ function generateGrids(size) {
     };
 };
 
-generateGrids(32);
+const navPane = container.querySelector('#nav-pane');
 
-const cells = document.querySelectorAll('.cell');
+const gridRange = navPane.querySelector('#gridRange');
+
+generateGrids(gridRange.value);
+
+const gridDesc = document.createElement('p');
+gridDesc.textContent = `grid size: ${gridRange.value}px`;
+navPane.appendChild(gridDesc);
+
+gridRange.addEventListener('input', () => {
+    while (screen.firstChild) {
+        screen.removeChild(screen.firstChild);
+    }
+    generateGrids(gridRange.value);
+    cells = document.querySelectorAll('.cell');
+    gridDesc.textContent = `grid size: ${gridRange.value}px`;
+
+});
+
+let cells = document.querySelectorAll('.cell');
 
 screen.addEventListener('mousedown', () => {
     cells.forEach((cell) => {
@@ -36,13 +54,13 @@ screen.addEventListener('mouseup', () => {
     });
 });
 
-const navPane = container.querySelector('#nav-pane');
-
 const resetButton = document.createElement('button');
 resetButton.addEventListener('click', () => {
-    cells.forEach((cell) => {
-        cell.style.background = 'white';
-    });
+    while (screen.firstChild) {
+        screen.removeChild(screen.firstChild);
+    }
+    generateGrids(gridRange.value);
+    cells = document.querySelectorAll('.cell');
 });
 resetButton.textContent = 'reset';
 navPane.appendChild(resetButton);
